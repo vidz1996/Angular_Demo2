@@ -1,0 +1,90 @@
+<div class="container">
+  <h1>Student Entry Form</h1>
+  <form #studentForm ="ngForm">
+      <div class="form-group">
+        <input type='text' class='form-control' id="fname" name='fname' placeholder="First Name..." 
+                required [(ngModel)]="fname">
+      </div>
+      <div class="form-group">
+        <input type='text' class='form-control' id="lname" name='lname' placeholder="Last Name..." 
+                required [(ngModel)]="lname">
+      </div>
+      <div class="form-group">
+        <input type='date' class='form-control' id="dob" name='dob' [(ngModel)]="dob">
+      </div>
+      <div class="form-group">
+        <input type='email' class='form-control' id="email" name='email' placeholder="Email ID..." 
+                required [(ngModel)]="email">
+      </div>
+      <div class="form-group">
+        <input type='phone' class='form-control' id="phone" name='phone' minlength="7" maxlength="10" 
+                placeholder="Phone Number..." [(ngModel)]="phone">
+      </div>
+      <div class="form-group">
+        <select id="faculty" name="faculty" class="form-control" required [(ngModel)]="faculty"> 
+          <option *ngFor="let f of fac" [value]="f">{{f}}</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-default" (click)="add_data()">Submit</button>
+  </form>
+</div>
+<br/>
+<div class="container">
+  <h1>Students Database</h1>
+  <table>
+    <tr>
+    <th>First name</th>
+    <th>Last name</th>
+    <th>DOB</th>
+    <th>Email</th>
+    <th>Phone</th>
+    <th>Faculty</th>
+    </tr>
+    <tr *ngFor="let s of student; let i = index">
+      <td>{{s.fname}}</td>
+      <td>{{s.lname}}</td>
+      <td>{{s.dob}}</td>
+      <td>{{s.email}}</td>
+      <td>{{s.phone}}</td>
+      <td>{{s.faculty}}</td>&nbsp;
+      <button class="btn btn-default" data-toggle="collapse" data-target="#demo" (click)="updateItem(i)">Edit</button> &nbsp;
+      <button (click)="removeItem(i)"> Delete</button>
+    </tr>
+  </table>
+<br/>
+
+<div id="demo" class="collapse">
+  <form #studentForm ="ngForm">
+    <div class="form-group">
+      <input type='text' class='form-control' id="fname" name='fname' placeholder="First Name..." 
+              required [(ngModel)]="fname_1">
+    </div>
+    <div class="form-group">
+      <input type='text' class='form-control' id="lname" name='lname' placeholder="Last Name..." 
+              required [(ngModel)]="lname_1">
+    </div>
+    <div class="form-group">
+      <input type='date' class='form-control' id="dob" name='dob' [(ngModel)]="dob_1">
+    </div>
+    <div class="form-group">
+      <input type='email' class='form-control' id="email" name='email' placeholder="Email ID..." 
+              required [(ngModel)]="email_1">
+    </div>
+    <div class="form-group">
+      <input type='phone' class='form-control' id="phone" name='phone' minlength="7" maxlength="10" 
+              placeholder="Phone Number..." [(ngModel)]="phone_1">
+    </div>
+    <div class="form-group">
+      <select id="faculty" name="faculty" class="form-control" required [(ngModel)]="faculty_1"> 
+        <option *ngFor="let f of fac" [value]="f">{{f}}</option>
+      </select>
+    </div>
+    <button type="submit" class="btn btn-default" (click)="edit()">Submit</button>
+  </form>
+</div>
+  <br/>
+  <br/>
+
+  
+  
+

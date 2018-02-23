@@ -1,0 +1,50 @@
+.container{
+    display: grid;
+}
+.col{
+    padding: .4em 1.3em;
+}
+
+input, select{
+    width: 50%;
+}
+.life-container{
+    background: #3FA0E1;
+    padding: 6px;
+    font-weight: 300;
+    cursor: pointer; 
+}
+
+.ng-valid[required], .ng-valid.required  {
+    border-left: 5px solid #42A948; /* green */
+  }
+  
+  .ng-invalid:not(form)  {
+    border-left: 5px solid #a94442; /* red */
+  }
+
+  table {
+    border-collapse: collapse;
+    width: 100%
+}
+th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    background-color: #165361;
+    color: white;
+    font-size: 20px;
+    font-weight: 200;
+}
+th, td {
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+td{
+    padding: 8px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 17px;
+}
+
+tr:nth-child(even){background-color:rgb(132, 156, 42); color: black;}
+tr:nth-child(odd){background-color:rgb(112, 124, 69);color: black;}
+tr:hover {background-color:#5d7c83;}
